@@ -1,4 +1,4 @@
-import { createSlice,nanoid } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { addContact, fetchContacts, deleteContact } from "./operations";
 const conctactsInitialState ={
     items:[],
