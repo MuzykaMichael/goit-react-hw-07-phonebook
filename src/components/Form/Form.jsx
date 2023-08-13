@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Forma, Label, Input, BtnSubmit } from "./Form.styled";
 import {nanoid} from 'nanoid'
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "redux/contactsSlice";
-import { getContacts } from "redux/selectors";
+import { addContact } from "redux/operations";
+import { selectContacts } from "redux/selectors";
 
 export const Form =()=>{
     const [name,setName] = useState("");
     const [number,setNumber] = useState("");
     const dispatch = useDispatch();
-    const contacts = useSelector(getContacts)
+    const contacts = useSelector(selectContacts)
 
     const formChangeName = evt => {
         const {value} = evt.target;
@@ -20,7 +20,7 @@ export const Form =()=>{
         setNumber(value);
     }
     const onSubmit = newContact =>{
-        const sameContact = contacts.contacts.find(
+        const sameContact = contacts.items.find(
             ({name,number})=>name.toLowerCase()===newContact.name.toLowerCase() || number===newContact.number
           );
           if (sameContact) {

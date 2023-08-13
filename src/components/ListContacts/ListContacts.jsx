@@ -1,6 +1,6 @@
 import { ContactsList } from "./ListContacts.styled";
 import { Contact } from "components/Contact/Contact";
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectVisibleContacts } from 'redux/selectors';
 
