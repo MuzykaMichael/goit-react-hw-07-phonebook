@@ -17,26 +17,7 @@ const handleRejected = (state,action) =>{
 const contactsSlice = createSlice({
     name:'contacts',
     initialState: conctactsInitialState,
-    // reducers: {
-    //     addContact:{
-    //         reducer(state,action){
-    //             state.contacts.push(action.payload)
-    //     },prepare({name,number}){
-    //         return {
-    //             payload:{
-    //                 id: nanoid(),
-    //                 name,
-    //                 number,
-    //             }
-    //         }
-    //     }
-       
-    //     },
-    //     deleteContact(state,action){
-    //         const index = state.contacts.findIndex(task=>task.id === action.payload)
-    //         state.contacts.splice(index,1)
-    //     }
-    // }
+
     extraReducers: {
         [fetchContacts.pending]:handlePending,
         [fetchContacts.fulfilled](state,action) {
@@ -67,4 +48,3 @@ const contactsSlice = createSlice({
 
 export const contactsReducer = contactsSlice.reducer;
 
-// export const {addContact,deleteContact} = contactsSlice.actions;
