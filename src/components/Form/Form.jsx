@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Forma, Label, Input, BtnSubmit } from "./Form.styled";
-import {nanoid} from 'nanoid'
 import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "redux/operations";
 import { selectContacts } from "redux/selectors";
@@ -31,7 +30,7 @@ export const Form =()=>{
     }
     const formSubmit = evt =>{
         evt.preventDefault();
-        const contact = {name,number,id:nanoid()};
+        const contact = {name,number};
         onSubmit(contact);
         clear();
     }
